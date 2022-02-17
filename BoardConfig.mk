@@ -16,22 +16,25 @@
 -include device/samsung/pxa1908-common/BoardConfigCommon.mk
 
 # inherit from the proprietary version
-#-include vendor/samsung/grandprimevelte/BoardConfigVendor.mk
+#-include vendor/samsung/coreprimevelte/BoardConfigVendor.mk
 
-DEVICE_PATH := device/samsung/grandprimevelte
+DEVICE_PATH := device/samsung/coreprimevelte
 
-TARGET_OTA_ASSERT_DEVICE := grandprimevelte
+TARGET_OTA_ASSERT_DEVICE := coreprimevelte
 
 # Init
 TARGET_PROVIDES_INIT_TARGET_RC := true
 TARGET_LIBINIT_PXA1908_DEFINES_FILE := $(DEVICE_PATH)/init/init_grandprimevelte.cpp
 
+# MRVL
+BOARD_PROVIDES_MKBOOTIMG := false
+
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/samsung/grandprimevelte
-TARGET_KERNEL_CONFIG := lineage_grandprimevelte_defconfig
+TARGET_KERNEL_SOURCE := kernel/samsung/coreprimevelte
+TARGET_KERNEL_CONFIG := pxa1908_coreprimevelte_eur_defconfig
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
@@ -47,8 +50,8 @@ BOARD_KERNEL_PAGESIZE     := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_IMAGE_NAME   := Image.gz
 BOARD_DTBTOOL_ARGS        :=
-BOARD_MKBOOTIMG_ARGS      := --unknown 0x3000000 --tags_offset 0x00000100 --seandroidenforce
-BOARD_MKRECOVERYIMG_ARGS  := --unknown 0x3000000 --tags_offset 0x00000100 --seandroidenforce
+BOARD_MKBOOTIMG_ARGS      := --unknown 0x3000000 --tags_offset 0x00000100
+BOARD_MKRECOVERYIMG_ARGS  := --unknown 0x3000000 --tags_offset 0x00000100
 BOARD_UBOOT_ARGS          := -A arm64 -O linux -T kernel -C gzip -a 01000000 -e 01000000 -n "pxa1928dkb linux"
 BOARD_UBOOT_IMAGE_NAME    := uImage
 
@@ -68,7 +71,7 @@ BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE  := ext4
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/etc/recovery.fstab
 
 # TWRP Recovery
-RECOVERY_VARIANT := twrp
+#RECOVERY_VARIANT := twrp
 TW_THEME := portrait_hdpi
 PRODUCT_COPY_FILES += $(DEVICE_PATH)/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab
 HAVE_SELINUX := true

@@ -16,7 +16,7 @@
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Proprietary files
-$(call inherit-product, vendor/samsung/grandprimevelte/grandprimevelte-vendor.mk)
+$(call inherit-product-if-existst, vendor/samsung/coreprimevelte/coreprimevelte-vendor.mk)
 
 # Audio Configs
 PRODUCT_COPY_FILES += \
@@ -58,4 +58,4 @@ endif
 
 # Inherit from 
 $(call inherit-product, device/samsung/pxa1908-common/pxa1908-common.mk)
-$(call inherit-product, vendor/nemirtingas/common_board.mk)
+$(call inherit-product-if-exists, vendor/nemirtingas/common_board.mk)
