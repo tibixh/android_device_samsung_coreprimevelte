@@ -1,4 +1,4 @@
-Device Tree For Samsung Galaxy Grand Prime VE LTE
+Device Tree For Samsung Galaxy Core Prime VE LTE
 =================================================
 
 Basic   | Spec Sheet
@@ -10,7 +10,7 @@ Memory  | 1GB RAM
 Shipped Android Version | 5.1
 Storage | 8GB
 MicroSD | Up to 64GB
-Battery | 2600 mAh
+Battery | 2000 mAh
 Display | 5.0"
 Camera  | 8 MP, 3264 x 2448 pixels
 

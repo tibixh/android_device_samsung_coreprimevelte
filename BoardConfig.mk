@@ -18,15 +18,18 @@
 # inherit from the proprietary version
 #-include vendor/samsung/grandprimevelte/BoardConfigVendor.mk
 
-DEVICE_PATH := device/samsung/grandprimevelte
+DEVICE_PATH := device/samsung/coreprimevelte
 
-TARGET_OTA_ASSERT_DEVICE := grandprimevelte
+TARGET_OTA_ASSERT_DEVICE := coreprimevelte
 
 # Init
 TARGET_LIBINIT_PXA1908_DEFINES_FILE := $(DEVICE_PATH)/init/init_grandprimevelte.cpp
 
+# MRVL
+BOARD_PROVIDES_MKBOOTIMG := false
+
 # Properties
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+#TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # RIL
 BOARD_PROVIDES_LIBRIL := true
@@ -34,8 +37,8 @@ ANDROID_MULTI_SIM := true
 ANDROID_SIM_COUNT_2 := true
 
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/samsung/grandprimevelte
-TARGET_KERNEL_CONFIG := lineage_grandprimevelte_defconfig
+TARGET_KERNEL_SOURCE := kernel/samsung/coreprimevelte
+TARGET_KERNEL_CONFIG := pxa1908_coreprimevelte_eur_defconfig
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
@@ -64,11 +67,15 @@ BOARD_FLASH_BLOCK_SIZE             := 131072
 TARGET_USERIMAGES_USE_EXT4         := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE  := ext4
 
+# Screen
+TARGET_SCREEN_WIDTH := 480
+TARHET_SCREEN_HEIGHT := 800
+
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/etc/recovery.fstab
 
 # TWRP Recovery
-RECOVERY_VARIANT := twrp
+#RECOVERY_VARIANT := twrp
 TW_THEME := portrait_hdpi
 PRODUCT_COPY_FILES += $(DEVICE_PATH)/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab
 RECOVERY_FSTAB_VERSION := 2
