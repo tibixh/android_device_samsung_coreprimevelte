@@ -75,7 +75,7 @@ TARHET_SCREEN_HEIGHT := 800
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/etc/recovery.fstab
 
 # TWRP Recovery
-#RECOVERY_VARIANT := twrp
+RECOVERY_VARIANT := twrp
 TW_THEME := portrait_hdpi
 PRODUCT_COPY_FILES += $(DEVICE_PATH)/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab
 RECOVERY_FSTAB_VERSION := 2
