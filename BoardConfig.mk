@@ -27,14 +27,16 @@ TARGET_LIBINIT_PXA1908_DEFINES_FILE := $(DEVICE_PATH)/init/init_grandprimevelte.
 
 # MRVL
 BOARD_PROVIDES_MKBOOTIMG := false
+MKBOOTIMG_PXA := hardware/marvell/bootimage/mkbootimg/mkbootimg
+BOARD_CUSTOM_MKBOOTIMG := $(MKBOOTIMG_PXA)
 
 # Properties
 #TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # RIL
 BOARD_PROVIDES_LIBRIL := true
-ANDROID_MULTI_SIM := true
-ANDROID_SIM_COUNT_2 := true
+#ANDROID_MULTI_SIM := true
+#ANDROID_SIM_COUNT_2 := true
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/coreprimevelte
@@ -45,7 +47,7 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/
 
 BOARD_KERNEL_BASE         := 0x10000000
-BOARD_KERNEL_CMDLINE      := android.mavaleur=test
+BOARD_KERNEL_CMDLINE      := android.mavaleur=test androidboot.selinux=permssive
 BOARD_KERNEL_PAGESIZE     := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_IMAGE_NAME   := Image.gz
@@ -78,9 +80,9 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/etc/recovery.fstab
 # TWRP Recovery
 #RECOVERY_VARIANT := twrp
 TW_THEME := portrait_hdpi
-#PRODUCT_COPY_FILES += $(DEVICE_PATH)/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab
+PRODUCT_COPY_FILES += $(DEVICE_PATH)/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab
 #RECOVERY_FSTAB_VERSION := 2
-HAVE_SELINUX := true
+#HAVE_SELINUX := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 RECOVERY_SDCARD_ON_DATA := true
 TW_HAS_DOWNLOAD_MODE := true
