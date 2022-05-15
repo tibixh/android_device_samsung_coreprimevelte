@@ -5,3 +5,7 @@
 - Make wrapper libraries to use Marvell libraries without modifying Android's code
 - Rework the power.mrvl library, to enhance battery life
 - Maybe something more, I can't remember right now
+
+
+# tibixh
+- fix wifi

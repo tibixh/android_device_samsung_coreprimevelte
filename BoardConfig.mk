@@ -33,6 +33,9 @@ BOARD_CUSTOM_MKBOOTIMG := $(MKBOOTIMG_PXA)
 # Properties
 #TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
+# Healthd
+BOARD_HAL_STATIC_LIBRARIES := libhealthd.mrvl
+
 # RIL
 BOARD_PROVIDES_LIBRIL := true
 #ANDROID_MULTI_SIM := true
