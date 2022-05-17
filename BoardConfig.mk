@@ -25,10 +25,12 @@ TARGET_OTA_ASSERT_DEVICE := coreprimevelte
 # Init
 #TARGET_LIBINIT_PXA1908_DEFINES_FILE := $(DEVICE_PATH)/init/init_grandprimevelte.cpp
 
-# MRVL
+# Bootimage
 BOARD_PROVIDES_MKBOOTIMG := false
-MKBOOTIMG_PXA := hardware/marvell/bootimage/mkbootimg/mkbootimg
-BOARD_CUSTOM_MKBOOTIMG := $(MKBOOTIMG_PXA)
+MKBOOTIMG := hardware/marvell/bootimage/mkbootimg/mkbootimg
+BOARD_CUSTOM_MKBOOTIMG := $(MKBOOTIMG)
+MKBOOTIMG_PXA := $(MKBOOTIMG)
+export MKBOOTIMG
 
 # Properties
 #TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
