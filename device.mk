@@ -16,7 +16,7 @@
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Proprietary files
-$(call inherit-product-if-existst, vendor/samsung/grand/grandprimevelte-vendor.mk)
+$(call inherit-product, vendor/samsung/coreprimevelte/coreprimevelte-vendor.mk)
 
 # Audio Configs
 PRODUCT_COPY_FILES += \

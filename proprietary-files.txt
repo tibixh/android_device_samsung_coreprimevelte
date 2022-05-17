@@ -50,6 +50,7 @@ lib/libscenedetect.so
 lib/libextsensorhal.so
 lib/libsecnativefeature.so
 
+
 # GPS
 lib/hw/gps.mrvl.so
 lib/libagps_hal.so
@@ -70,6 +71,8 @@ lib/libGAL.so
 lib/libgputex.so
 lib/libVSC.so
 lib/libGLSLC.so
+lib/libion.so
+
 
 # Keystore
 lib/hw/keystore.default.so

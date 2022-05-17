@@ -16,14 +16,14 @@
 -include device/samsung/pxa1908-common/BoardConfigCommon.mk
 
 # inherit from the proprietary version
-#-include vendor/samsung/grandprimevelte/BoardConfigVendor.mk
+-include vendor/samsung/coreprimevelte/BoardConfigVendor.mk
 
 DEVICE_PATH := device/samsung/coreprimevelte
 
 TARGET_OTA_ASSERT_DEVICE := coreprimevelte
 
 # Init
-TARGET_LIBINIT_PXA1908_DEFINES_FILE := $(DEVICE_PATH)/init/init_grandprimevelte.cpp
+#TARGET_LIBINIT_PXA1908_DEFINES_FILE := $(DEVICE_PATH)/init/init_grandprimevelte.cpp
 
 # MRVL
 BOARD_PROVIDES_MKBOOTIMG := false
